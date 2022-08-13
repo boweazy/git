@@ -442,7 +442,7 @@ static int fetch_refs_via_pack(struct transport *transport,
 	struct ref *refs = NULL;
 	struct fetch_pack_args args;
 	struct ref *refs_tmp = NULL;
-	struct ref *object_info_refs = xcalloc(1, sizeof (struct ref));
+	struct ref *object_info_refs = xcalloc(1, sizeof(struct ref));
 
 	memset(&args, 0, sizeof(args));
 	args.uploadpack = data->options.uploadpack;
@@ -479,7 +479,7 @@ static int fetch_refs_via_pack(struct transport *transport,
 		args.quiet = 1;
 		args.no_progress = 1;
 		for (i = 0; i < transport->smart_options->object_info_oids->nr; i++) {
-			struct ref *temp_ref = xcalloc(1, sizeof (struct ref));
+			struct ref *temp_ref = xcalloc(1, sizeof(struct ref));
 			temp_ref->old_oid = *(transport->smart_options->object_info_oids->oid + i);
 			temp_ref->exact_oid = 1;
 			ref->next = temp_ref;
